@@ -1,0 +1,15 @@
+{
+    "title": "maclunkey-role",
+    "description": "",
+    "type": "servercontent",
+    "tags": [
+        "fun",
+        "roleplay"
+    ],
+    "ignore": [
+        ".git/*",
+        "README.md",
+        "workshop-file.gma",
+        ".gitignore"
+    ]
+}
