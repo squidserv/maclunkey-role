@@ -17,7 +17,7 @@ end
 
 SWEP.Author = "Faaafv"
 SWEP.Instructions = " "
-SWEP.Category = " "
+SWEP.Category = WEAPON_CATEGORY_ROLE
 SWEP.IconLetter = "w"
 SWEP.UseHands = true
 SWEP.Base = "weapon_tttbase"
