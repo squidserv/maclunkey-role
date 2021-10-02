@@ -19,9 +19,25 @@ ROLE.convars = {}
 RegisterRole(ROLE)
 
 if SERVER then
-    resource.AddFile("materials/vgui/ttt/icon_mac.vmt")
-    resource.AddFile("materials/vgui/ttt/sprite_mac.vmt")
-    resource.AddSingleFile("materials/vgui/ttt/sprite_mac_noz.vmt")
-    resource.AddSingleFile("materials/vgui/ttt/score_mac.png")
-    resource.AddSingleFile("materials/vgui/ttt/tab_mac.png")
+    -- Prints a message to all jesters at the start of a round, telling them there is a maclunkey
+    hook.Add("TTTBeginRound", "MaclunkeyAlertMessage", function()
+        timer.Simple(1, function()
+            local isMaclunkey = false
+
+            for i, ply in ipairs(player.GetAll()) do
+                if ply:IsMaclunkey() then
+                    isMaclunkey = true
+                    break
+                end
+            end
+
+            if isMaclunkey then
+                for i, ply in ipairs(player.GetAll()) do
+                    if ply:IsJesterTeam() then
+                        ply:PrintMessage(HUD_PRINTCENTER, "There is a Maclunkey")
+                    end
+                end
+            end
+        end)
+    end)
 end
