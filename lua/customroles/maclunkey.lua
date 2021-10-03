@@ -34,7 +34,7 @@ if SERVER then
             if isMaclunkey then
                 for i, ply in ipairs(player.GetAll()) do
                     if ply:IsJesterTeam() then
-                        ply:PrintMessage(HUD_PRINTCENTER, "There is a Maclunkey")
+                        ply:PrintMessage(HUD_PRINTCENTER, "There is " .. ROLE_STRINGS_EXT[ROLE_MACLUNKEY])
                     end
                 end
             end
